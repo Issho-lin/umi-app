@@ -4,11 +4,10 @@ import { useModel } from 'umi'
 import styles from './index.less'
 
 export default function IndexPage() {
-  const { fetchAccount } = useModel('useHome')
+  const { weather } = useModel('useHome')
   useEffect(() => {
-    fetchAccount()
-    console.log('123123')
-  }, [fetchAccount])
+    console.log(weather)
+  }, [weather])
   return (
     <div>
       <h6 className={styles.title}>

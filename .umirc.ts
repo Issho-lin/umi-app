@@ -20,19 +20,5 @@ export default defineConfig({
   mfsu: {},
   chainWebpack(config) {
     config.plugin('moment2dayjs').use('antd-dayjs-webpack-plugin')
-    // config.merge({
-    //   plugin: {
-    //     install: {
-    //       plugin: require('terser-webpack-plugin'),
-    //       args: [{
-    //         terserOptions: {
-    //           compress: {
-    //             drop_console: true
-    //           }
-    //         }
-    //       }]
-    //     }
-    //   }
-    // })
   },
 })

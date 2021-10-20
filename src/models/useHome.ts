@@ -1,16 +1,14 @@
-import { useState, useCallback } from 'react'
-import { fetchAccountApi } from '@/api/home'
+import { useEffect } from 'react'
+import { Home } from '@/hooks'
+
+const { useFetchWeatherApi } = Home
 
 export default function useHome() {
-  const [count, setCount] = useState(1)
-  const fetchAccount = useCallback(async () => {
-    const res = await fetchAccountApi()
-    console.log(res)
-  }, [])
-
+  const { weather, fetchWeather } = useFetchWeatherApi()
+  useEffect(() => {
+    fetchWeather()
+  }, [fetchWeather])
   return {
-    count,
-    setCount,
-    fetchAccount,
+    weather,
   }
 }

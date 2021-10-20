@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "cross-env API_ENV=dev umi dev",
-    "build": "cross-env API_ENV=prod umi build",
-    "build:test": "cross-env API_ENV=test umi build",
+    "start": "cross-env API_ENV=dev UMI_ENV=dev umi dev",
+    "build": "cross-env API_ENV=prod UMI_ENV=prod umi build",
+    "build:test": "cross-env API_ENV=test COMPRESS=none umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",

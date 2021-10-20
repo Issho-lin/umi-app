@@ -9,7 +9,7 @@ export default [
       },
       {
         path: '/home',
-        component: '@/pages/index',
+        component: '@/pages/home/index',
       },
     ],
   },

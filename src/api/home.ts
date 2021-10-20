@@ -3,21 +3,19 @@ import host from './host'
 
 const { env } = host
 
-export type AccountType = {
-  headPic: string
-  account: string
-  shopName: string
+type WeatherType = {
+  result: {
+    status: number
+    result: {
+      city: string
+      citycode: number
+    }
+  }
 }
 
-export type MoneyType = {
-  balance: number
-  frozen: number
-  todayExpenditure: number
-}
-
-export const fetchAccountApi = () => {
-  return get<{
-    accountData: AccountType
-    money: MoneyType
-  }>(`${env}/v4/admanager/account`)
+export const fetchWeatherApi = () => {
+  const res: WeatherType = get(
+    `${env}/jisuapi/weather?city=深圳&appkey=40e91431e978390daf06b07704a9523c`,
+  ) as any
+  return res
 }
