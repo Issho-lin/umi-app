@@ -1,1 +1,3 @@
-export { default as Home } from './useHomeApi'
+import * as useApi from './useApi'
+
+export { useApi }

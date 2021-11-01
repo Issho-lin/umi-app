@@ -26,6 +26,14 @@ const toast = ({ type, content }: ToastType) => {
   }
 }
 
+request.interceptors.request.use((url, options) => {
+  // 请求拦截处理
+  return {
+    url,
+    options,
+  }
+})
+
 request.interceptors.response.use(async (response) => {
   const res = await response.clone().json()
   if (res?.status === '未登录状态码') {

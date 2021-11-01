@@ -1,13 +1,20 @@
 import { useEffect } from 'react'
 import { DatePicker } from 'antd'
 import { useModel } from 'umi'
+import { useApi } from '@/hooks'
 import styles from './index.less'
+
+const {
+  Home: { useFetchWeatherApi },
+} = useApi
 
 export default function IndexPage() {
   const { weather } = useModel('useHome')
+  const { fetchWeather } = useFetchWeatherApi()
   useEffect(() => {
+    fetchWeather()
     console.log(weather)
-  }, [weather])
+  }, [fetchWeather, weather])
   return (
     <div>
       <h6 className={styles.title}>

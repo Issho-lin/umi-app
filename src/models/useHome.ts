@@ -1,7 +1,9 @@
 import { useEffect } from 'react'
-import { Home } from '@/hooks'
+import { useApi } from '@/hooks'
 
-const { useFetchWeatherApi } = Home
+const {
+  Home: { useFetchWeatherApi },
+} = useApi
 
 export default function useHome() {
   const { weather, fetchWeather } = useFetchWeatherApi()
